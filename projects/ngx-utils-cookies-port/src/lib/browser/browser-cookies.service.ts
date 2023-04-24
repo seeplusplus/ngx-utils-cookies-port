@@ -19,8 +19,8 @@ export class BrowserCookiesService extends CookiesService {
     super(cookiesOptions);
   }
 
-  protected cookiesReader(): { [key: string]: any } {
-    let lastCookies = {};
+  protected override cookiesReader(): { [key: string]: any } {
+    let lastCookies: Record<string, any>  = {};
     let lastCookieString = '';
     let cookiesArray: string[];
     let cookie: string;
@@ -38,7 +38,7 @@ export class BrowserCookiesService extends CookiesService {
         index = cookie.indexOf('=');
         if (index > 0) {  // ignore nameless cookies
           name = safeDecodeURIComponent(cookie.substring(0, index));
-          if (isBlank((lastCookies)[name])) {
+          if (isBlank(lastCookies[name])) {
             const cookieValue = safeDecodeURIComponent(cookie.substring(index + 1));
             // Ignore cookies stored with value 'undefined'
             if (!isBlank(cookieValue) && cookieValue !== 'undefined') {
@@ -51,7 +51,7 @@ export class BrowserCookiesService extends CookiesService {
     return lastCookies;
   }
 
-  protected cookiesWriter(): (name: string, value: string | undefined, options?: CookiesOptions) => void {
+  protected override cookiesWriter(): (name: string, value: string | undefined, options?: CookiesOptions) => void {
     return (name: string, value: string | undefined, options?: CookiesOptions) => {
       this.cookieString = this.buildCookieString(name, value, options);
     };

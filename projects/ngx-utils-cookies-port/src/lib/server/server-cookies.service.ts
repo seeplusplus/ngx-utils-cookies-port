@@ -17,7 +17,7 @@ export class ServerCookiesService extends CookiesService {
     super(cookiesOptions);
   }
 
-  protected cookiesReader(): { [key: string]: any } {
+  protected override cookiesReader(): { [key: string]: any } {
     const allCookies: { [key: string]: any } = {
       ...this.request.cookies,
       ...this.newCookies
@@ -31,7 +31,7 @@ export class ServerCookiesService extends CookiesService {
     return cookies;
   }
 
-  protected cookiesWriter(): (
+  protected override cookiesWriter(): (
     name: string,
     value: string | undefined,
     options?: CookiesOptions

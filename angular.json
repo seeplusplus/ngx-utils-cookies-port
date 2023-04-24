@@ -10,7 +10,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/ngx-utils-cookies-port/tsconfig.lib.json",
             "project": "projects/ngx-utils-cookies-port/ng-package.json"
@@ -36,12 +36,10 @@
               "projects/ngx-utils-cookies-port/tsconfig.lib.json",
               "projects/ngx-utils-cookies-port/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
-    }},
-  "defaultProject": "ngx-utils-cookies-port"
+    }
+  }
 }
