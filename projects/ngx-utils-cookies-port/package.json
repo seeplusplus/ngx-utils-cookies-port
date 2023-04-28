@@ -2,11 +2,11 @@
   "name": "@seeplusplus/ngx-utils-cookies-port",
   "version": "2.1.0",
   "peerDependencies": {
-    "@angular/common": "15.2.8",
-    "@angular/core": "15.2.8"
+    "@angular/common": "^14.2.0 || ^15.0.0",
+    "@angular/core": "^14.2.0 || ^15.0.0"
   },
   "dependencies": {
-    "tslib": "2.5.0"
+    "tslib": "^2.5.0"
   },
   "repository": {
     "type": "git",
