@@ -1,6 +1,6 @@
 {
   "name": "@seeplusplus/ngx-utils-cookies-port",
-  "version": "2.2.0",
+  "version": "2.2.0-rc.0",
   "peerDependencies": {
     "@angular/common": "^14.2.0 || ^15.0.0 || ^16.0.0",
     "@angular/core": "^14.2.0 || ^15.0.0 || ^16.0.0"
