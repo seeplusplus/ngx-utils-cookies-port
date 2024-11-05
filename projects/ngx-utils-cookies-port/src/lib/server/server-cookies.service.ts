@@ -42,7 +42,7 @@ export class ServerCookiesService extends CookiesService {
       options?: CookiesOptions
     ) => {
       this.newCookies[name] = value;
-      if(this.response.headersSent !== true) {
+      if (this.response.headersSent !== true) {
         this.response.cookie(name, value, this.buildCookiesOptions(options));
       }      
     };
